@@ -1,0 +1,68 @@
+body, html{
+  height: 100%;
+  margin: 0;
+}
+.bg{
+    background-image: url("Header.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #0F0F0F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 600px;
+    margin: auto;
+    color: white;
+    text-align: center;
+    margin-left: -300px;
+    margin-top: -200px;
+}
+.Status-div{
+  position: absolute;
+  height: 100%;
+  width: 150px;
+  background-color: black;
+  top: 0;
+}
+.Status{
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+.Msg{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.UserImg{
+  padding: 4px;
+  border: 4px solid white;
+}
+.card h1{
+  font-size: 20px;
+}
+.Title{
+  color: WHITE;
+  font-size: 18px;
+}
+.Info-div{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  height: 100%;
+  width: 150px;
+  background-color: black;
+  right: 0;
+  top: 0;
+}
+.Info{
+  font-size: 12px;
+  font-weight: lighter;
+}
