@@ -8,8 +8,6 @@ import stripe
 
 #csv library to create login databases, as well as RFID code reference databases
 
-import csv
-
 #Socket library to get data from the ESP-32
 
 #import sockets
@@ -18,7 +16,7 @@ import csv
 
 from HeliosChecker import *
 
-INDEXER_SOURCE = "./indexer.js"
+INDEXER_SOURCE = "../html/js/indexer.js"
 
 def create_script(name, status, membership, last_login, current_date, code, src, indexer_file_path):
 	if(status == "Active"):
@@ -30,14 +28,14 @@ def create_script(name, status, membership, last_login, current_date, code, src,
 		indexer.write(script)
 
 def main():
-	Checker = HeliosCheck("./LTBD.csv", "./RDB.csv")
+	Checker = HeliosCheck("./DB/LTBD.csv", "./DB/RDB.csv")
 	key = ' '
 	try:
 		with open("./KeyFile.key", "rf") as Key_File:
 			key = Key_File.readline()
 	except Exception as e:
 		print e
-	try: 
+	try:
 		stripe.api_key = key[:len(key) - 1]
 		pass
 	except Exception as e:
@@ -50,4 +48,3 @@ if __name__ == "__main__":
 	main()
 def get_request():
 	return 0
-
