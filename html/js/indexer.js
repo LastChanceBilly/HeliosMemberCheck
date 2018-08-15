@@ -1,9 +1,1 @@
-var container = {
-  userName : "Test Member",
-  Title : "Member",
-  Status : "color: green;",
-  last_login : "2018/06/13 [20:46:21]",
-  current_date : "02/02/05",
-  code :"cus_D0nTkXIS0gUJ9Z",
-  src : "../backend/DB/imgs/jose.jpg"
-};
+var container = {userName : "Test Member", Title : "Member", Status : "color: green;",StatusN: "PASS", last_login : "2018/08/15 [23:31:35]", current_date : "02/02/05", code :"cus_D0nTkXIS0gUJ9Z", src : "/msys32/home/lastc/projects/HeliosMemberCheck/backend/DB/imgs/jose.jpg", status_src : "./img/checkmarkgreen.jpg"};
