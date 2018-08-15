@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-#Thiss code is the first version of Helios Member Check
-#Writen by Jose Ricardo Monegro: josetecnom12@hotmail.com
 
 #Stripe's library used to interact with the main database
 
