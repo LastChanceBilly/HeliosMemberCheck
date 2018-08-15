@@ -10,7 +10,7 @@ class HeliosCheck:
 	#Needs the user's email and customer code
 	def AddLoginTime(self, email, code):
 		#Open the database file
-		with open(self.LoginTimeDB, "ab") as DatabaseFILE: 
+		with open(self.LoginTimeDB, "a") as DatabaseFILE:
 			#Create write object and write the user's data
 			DB_Writer = csv.writer(DatabaseFILE, delimiter=",", quotechar="'", quoting=csv.QUOTE_ALL)
 			Data = [strftime("%Y/%m/%d [%H:%M:%S]", gmtime()), code, email]
@@ -19,7 +19,7 @@ class HeliosCheck:
 	#Need RFID code, customer code, Picture directory
 	def AddDatabaseReference(self, RFID_code, code, PicDir):
 		#Open the database file
-		with open(self.ReferenceDB, "ab") as DatabaseFILE:
+		with open(self.ReferenceDB, "a") as DatabaseFILE:
 			#Create write object and write the user's data
 			DB_Writer = csv.writer(DatabaseFILE, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
 			Data = [RFID_code, code, PicDir]
@@ -28,20 +28,20 @@ class HeliosCheck:
 	def LookForRFID(self, RFID_code):
 		#Search result variables
 		Row = 0
-		#Open the database file 
-		with open(self.ReferenceDB, "rf") as DatabaseFILE:
+		#Open the database file
+		with open(self.ReferenceDB, "r") as DatabaseFILE:
 			DB_Reader = csv.reader(DatabaseFILE, delimiter=",", quotechar="'")
 			for row in DB_Reader:
 				if row[0] == RFID_code:
 					#RFID code, cus_code, picture_dir
 					return Row, row[1], row[2]
 				Row += 1
-			return 0  
+			return 0
 	def LookForLoginTime(self, code):
 		Row = 0
-		with open(self.LoginTimeDB, "rf") as DatabaseFILE:
+		with open(self.LoginTimeDB, "r") as DatabaseFILE:
 			DB_Reader = csv.reader(DatabaseFILE, delimiter=",", quotechar="'")
-			result = " " 
+			result = " "
 			for row in DB_Reader:
 				if row[1] == code:
 					result = row[0]
