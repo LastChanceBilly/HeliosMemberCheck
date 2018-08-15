@@ -28,7 +28,9 @@ def create_script(name, status, membership, last_login, current_date, code, src,
 		indexer.write(script)
 
 def main():
+	#Initialize HeliosCheck object
 	Checker = HeliosCheck("./DB/LTBD.csv", "./DB/RDB.csv")
+	#Get the key from the KeyFile
 	key = ' '
 	try:
 		with open("./KeyFile.key", "rf") as Key_File:
@@ -41,8 +43,10 @@ def main():
 	except Exception as e:
 		print e
 		pass
+	#Get customer code
 	customer = stripe.Customer.retrieve("cus_D0nTkXIS0gUJ9Z")
 	Checker.AddLoginTime(customer.email, "cus_D0nTkXIS0gUJ9Z")
+	#Test example: Display Content on webpage
 	create_script(customer.description, "Active", "Member", Checker.LookForLoginTime("cus_D0nTkXIS0gUJ9Z"), "02/02/05", "cus_D0nTkXIS0gUJ9Z" ,"Jose.jpg", INDEXER_SOURCE)
 if __name__ == "__main__":
 	main()
