@@ -28,7 +28,7 @@ def create_script(name, status, membership, last_login, current_date, code, src,
 def main():
 	#Initialize HeliosCheck object
 	Checker = HeliosCheck("./DB/LTBD.csv", "./DB/RDB.csv")
-	#Get the key from the KeyFile
+	#Get the key from the key file
 	key = ' '
 	try:
 		with open("./KeyFile.key", "rf") as Key_File:
