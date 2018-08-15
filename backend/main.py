@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+#romain
+
 #Stripe's library used to interact with the main database
 
 import stripe
